@@ -1,33 +1,163 @@
-# vue
+# Boat
 
-This template should help get you started developing with Vue 3 in Vite.
+> Full-stack web application built with **Laravel**, **Vue 3**, **Vite**, and **Bun**.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 📌 Overview
 
-## Type Support for `.vue` Imports in TS
+This project uses:
+- **Laravel** as the backend framework
+- **Vue 3** as the frontend framework
+- **Vite** for frontend bundling
+- **Bun** for fast frontend dependency management
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+The architecture is optimized for:
+- Clear separation of backend & frontend
+- Fast local development
+- Easy onboarding for new team members
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🧰 Tech Stack
 
-## Project Setup
+### Backend
+- PHP ≥ 8.1
+- Laravel
+- Composer
 
-```sh
-pnpm install
+### Frontend
+- Vue 3
+- Vite
+- TypeScript (optional)
+- Bun
+
+### Tooling
+- VS Code
+- Volar (Vue Language Features)
+
+---
+
+## 💻 System Requirements
+
+- PHP ≥ 8.1
+- Composer
+- Bun
+- Node.js (optional but recommended)
+- Git
+
+---
+
+## 🧠 Recommended IDE Setup
+
+- VS Code
+- Extensions:
+  - Volar
+- Disable Vetur to avoid conflicts
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone repository
+```bash
+git clone <repository-url>
+cd <project-name>
 ```
 
-### Compile and Hot-Reload for Development
+---
 
-```sh
-pnpm dev
+## ⚙️ Backend Setup (Laravel)
+
+### 2. Install PHP dependencies
+```bash
+composer install
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
+### 3. Setup environment file
+```bash
+cp .env.example .env
 ```
+
+### 4. Generate application key
+```bash
+php artisan key:generate
+```
+
+---
+
+## 🎨 Frontend Setup (Vue 3 + Vite + Bun)
+
+### 5. Install frontend dependencies
+```bash
+bun install
+```
+
+### 6. Start Vite development server
+```bash
+bun run dev
+```
+
+---
+
+## ▶️ Running the Application
+
+### 7. Start Laravel server
+```bash
+php artisan serve
+```
+
+### Default URLs
+- Backend: http://127.0.0.1:8000
+- Frontend: http://localhost:5173
+
+---
+
+## 🏗️ Production Build
+
+```bash
+bun run build
+php artisan optimize
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+├── app/
+├── resources/
+│   ├── js/
+│   └── views/
+├── public/
+├── routes/
+├── vite.config.ts
+├── package.json
+├── composer.json
+└── README.md
+```
+
+---
+
+## 📜 Common Commands
+
+| Command | Description |
+|------|-------------|
+| composer install | Install backend dependencies |
+| php artisan serve | Start Laravel server |
+| bun install | Install frontend dependencies |
+| bun run dev | Start Vite dev server |
+| bun run build | Build frontend |
+
+---
+
+## 🔐 Environment Notes
+
+- Do not commit `.env`
+- Use `.env.example` as reference
+
+---
+
+## 📄 License
+
+MIT
