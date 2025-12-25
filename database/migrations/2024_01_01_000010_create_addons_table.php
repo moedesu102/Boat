@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('addons', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->foreignId('branch_id')->nullable()->constrained('branches')->onDelete('set null');
+            $table->decimal('price', 10, 2);
+            $table->string('category', 100)->nullable();
+            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->string('category_name', 100)->nullable();
+            $table->boolean('rental_only')->default(false);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('addons');
+    }
+};
+
